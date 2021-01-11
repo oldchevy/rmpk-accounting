@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './static_assets/book_cover.jpg';
 import './App.css';
 
 function App() {
@@ -7,16 +7,17 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          E-book coming soon! Stay tuned for more details.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>Follow my twitter <code>
+          <a
+            className="App-link"
+            href="https://twitter.com/dailyfantasycpa?lang=en"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          @dailyfantasycpa
+        </a></code> to stay up to date.</p>
       </header>
     </div>
   );

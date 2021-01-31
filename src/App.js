@@ -1,25 +1,135 @@
-import logo from './static_assets/book_cover.jpg';
+// import logo from './static_assets/book_cover.jpg';
+// import courtBackground from './static_assets/basketball_court.jpg'
+import React from 'react';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          E-book coming soon! Stay tuned for more details.
-        </p>
-        <p>Follow my twitter <code>
-          <a
-            className="App-link"
-            href="https://twitter.com/dailyfantasycpa?lang=en"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-          @dailyfantasycpa
-        </a></code> to stay up to date.</p>
-      </header>
-    </div>
+  return (  
+    <React.Fragment> 
+ 
+    <header className="footer-header sticky-top py-1">
+      <nav className="container d-flex flex-column flex-md-row justify-content-between">
+        <a className="py-2" href="#" aria-label="Product">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-trophy" viewBox="0 0 16 16">
+            <path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935zM3.504 1c.007.517.026 1.006.056 1.469.13 2.028.457 3.546.87 4.667C5.294 9.48 6.484 10 7 10a.5.5 0 0 1 .5.5v2.61a1 1 0 0 1-.757.97l-1.426.356a.5.5 0 0 0-.179.085L4.5 15h7l-.638-.479a.501.501 0 0 0-.18-.085l-1.425-.356a1 1 0 0 1-.757-.97V10.5A.5.5 0 0 1 9 10c.516 0 1.706-.52 2.57-2.864.413-1.12.74-2.64.87-4.667.03-.463.049-.952.056-1.469H3.504z"/>
+          </svg>
+        </a>
+        <a className="py-2 d-none d-md-inline-block" href="#">About</a>
+        <a className="py-2 d-none d-md-inline-block" href="#">Consultation</a>
+        <a className="py-2 d-none d-md-inline-block" href="#">Book</a>
+        <a className="py-2 d-none d-md-inline-block" href="#">Presentation</a>
+        <a className="py-2 d-none d-md-inline-block" href="#">Contact Us</a>
+      </nav>
+    </header>
+
+    <main>
+      <div className="court">
+        <div className="over-court position-relative p-3 p-md-5">
+          <div className="col-md-5 p-lg-5 mx-auto my-5">
+            <h1 className="display-4 fw-normal">Daily Fantasy Sports CPA</h1>
+            <p className="lead fw-normal">Welcome to my website. I specialize in advising YOU about daily fantasy sports tax implications. Read on to find out about what I offer!</p>
+            <a className="btn btn-primary" href="#">Coming soon</a>
+          </div>
+        </div>
+        {/* <div className="product-device shadow-sm d-none d-md-block"></div>
+        <div className="product-device product-device-2 shadow-sm d-none d-md-block"></div> */}
+      </div>
+
+      <div className="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+        <div className="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+          <div className="my-3 py-3">
+            <h2 className="display-5">Another headline</h2>
+            <p className="lead">And an even wittier subheading.</p>
+          </div>
+          <div className="bg-light shadow-sm mx-auto card-bkgd"></div>
+        </div>
+        <div className="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+          <div className="my-3 p-3">
+            <h2 className="display-5">Another headline</h2>
+            <p className="lead">And an even wittier subheading.</p>
+          </div>
+          <div className="bg-dark shadow-sm mx-auto card-bkgd"></div>
+        </div>
+      </div>
+
+      <div className="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+        <div className="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+          <div className="my-3 p-3">
+            <h2 className="display-5">Another headline</h2>
+            <p className="lead">And an even wittier subheading.</p>
+          </div>
+          <div className="bg-dark shadow-sm mx-auto card-bkgd"></div>
+        </div>
+        <div className="bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+          <div className="my-3 py-3">
+            <h2 className="display-5">Another headline</h2>
+            <p className="lead">And an even wittier subheading.</p>
+          </div>
+          <div className="bg-light shadow-sm mx-auto card-bkgd"></div>
+        </div>
+      </div>
+
+      <div className="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+        <div className="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+          <div className="my-3 p-3">
+            <h2 className="display-5">Another headline</h2>
+            <p className="lead">And an even wittier subheading.</p>
+          </div>
+          <div className="bg-white shadow-sm mx-auto card-bkgd"></div>
+        </div>
+        <div className="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+          <div className="my-3 py-3">
+            <h2 className="display-5">Another headline</h2>
+            <p className="lead">And an even wittier subheading.</p>
+          </div>
+          <div className="bg-white shadow-sm mx-auto card-bkgd"></div>
+        </div>
+      </div>
+
+      <div className="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+        <div className="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+          <div className="my-3 p-3">
+            <h2 className="display-5">Another headline</h2>
+            <p className="lead">And an even wittier subheading.</p>
+          </div>
+          <div className="bg-white shadow-sm mx-auto card-bkgd"></div>
+        </div>
+        <div className="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+          <div className="my-3 py-3">
+            <h2 className="display-5">Another headline</h2>
+            <p className="lead">And an even wittier subheading.</p>
+          </div>
+          <div className="bg-white shadow-sm mx-auto card-bkgd"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer className="footer-header">
+      <div className="container py-3">
+        <div className="row">
+          <div className="col-12 col-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-trophy" viewBox="0 0 16 16">
+              <path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935zM3.504 1c.007.517.026 1.006.056 1.469.13 2.028.457 3.546.87 4.667C5.294 9.48 6.484 10 7 10a.5.5 0 0 1 .5.5v2.61a1 1 0 0 1-.757.97l-1.426.356a.5.5 0 0 0-.179.085L4.5 15h7l-.638-.479a.501.501 0 0 0-.18-.085l-1.425-.356a1 1 0 0 1-.757-.97V10.5A.5.5 0 0 1 9 10c.516 0 1.706-.52 2.57-2.864.413-1.12.74-2.64.87-4.667.03-.463.049-.952.056-1.469H3.504z"/>
+            </svg>
+            <small className="d-block mb-3 text-muted">© 2020</small>
+          </div>
+          <div className="col-6 col-md">
+          </div>
+          <div className="col-6 col-md">
+          </div>
+          <div className="col-6 col-md">
+          </div>
+          <div className="col-6 col-md">
+            <h5>About</h5>
+            <ul className="list-unstyled text-small">
+              <li><a className="link-secondary" href="#">Team</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    </React.Fragment>
   );
 }
 

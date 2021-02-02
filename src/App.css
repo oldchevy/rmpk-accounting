@@ -40,7 +40,7 @@
 }
 
 .about-me {
-  background-image: url(./static_assets/dc_img.jpeg);
+  background-image: url(./static_assets/dc_img.jpg);
   
   /* Center and scale the image nicely */
   background-position: 75% 75%;

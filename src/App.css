@@ -102,6 +102,10 @@
   color: #a8dadc;
 }
 
+.footer-header h3 {
+  color: #a8dadc;
+}
+
 .footer-header svg {
   color: #a8dadc;
 }
@@ -117,5 +121,41 @@
 @media (min-width: 768px) {
   .flex-md-equal > * {
     flex: 1;
+  }
+}
+
+.bottom-buffer {
+  margin-top: 8px;
+}
+
+.right-side {
+  text-align: right;
+}
+
+.mo-margin {
+  margin: 8px;
+}
+
+@media (max-width: 774px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .hide-skinny {
+    display: none;
+  }
+}
+
+@media (min-width: 961px) {
+  .hide-noskinny {
+    display: none;
+  }
+}
+
+@media (min-width: 775px) {
+  .hide-nonmobile {
+    display: none;
   }
 }

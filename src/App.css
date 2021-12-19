@@ -16,6 +16,18 @@
   max-width: 960px;
 }
 
+.logo-medium {
+  width: 60px;
+}
+
+.logo-footer {
+  transform: scale(0.3);
+}
+
+.fit-logo {
+  max-width: 150px;
+}
+
 .court {
   background-image: url(./static_assets/court_background.jpg);
   

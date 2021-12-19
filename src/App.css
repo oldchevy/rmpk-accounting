@@ -8,6 +8,10 @@
   min-height: 36rem;
 }
 
+.calendly-height {
+  min-height: 100rem;
+}
+
 .container {
   max-width: 960px;
 }
@@ -40,12 +44,18 @@
 }
 
 .about-me {
-  background-image: url(./static_assets/dc_img.jpg);
-  
   /* Center and scale the image nicely */
   background-position: 75% 75%;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.about-me.pk {
+  background-image: url(./static_assets/pk_headshot.jpg);
+}
+
+.about-me.rm {
+  background-image: url(./static_assets/rm_headshot.jpg);
 }
 
 .taxes {

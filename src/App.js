@@ -95,8 +95,8 @@ class App extends React.Component {
       </header>
   
       <main>
-        <div className="court">
-          <div className="over-court position-relative p-3 p-md-5">
+        <div className="chain">
+          <div className="over-chain position-relative p-3 p-md-5">
             <div className="col-sm-5 p-lg-5 mx-auto my-5">
               <h1 className="display-4 fw-normal hide-mobile">RMPK Accounting</h1>
               <p className="lead fw-normal">
@@ -149,10 +149,12 @@ class App extends React.Component {
                 Hi, I'm Peter.
               </p>
               <p className="">
-                Peter graduated from Virginia Tech in May of 2014 with Bachelor’s degrees in Accounting and Finance. 
+                Peter graduated from Virginia Tech in May of 2014 with bachelor’s degrees in Accounting and Finance. 
                 He has 8 years of tax experience at a national public accounting firm in which he has helped to consult 
                 and prepare tax returns for hundreds of clients. In his spare time, Peter enjoys playing golf, investing 
-                in long-term index funds and cryptocurrency, and making Daily Fantasy Sports lineups.
+                in long-term index funds and cryptocurrency, and making Daily Fantasy Sports lineups. Peter got into NFTs 
+                first through NBA TopShot and then later purchased his first NFT- a Bored Ape on OpenSea. He is still holding 
+                onto one ape, one kennel dog, and a few mutants. His favorite NFT in his collection is his super yeti.
               </p>
             </div>
           </div>

@@ -1,3 +1,7 @@
+body {
+  font-family:Arial, Helvetica, sans-serif;
+}
+
 .card-bkgd {
   width: 20rem; 
   height: 20rem; 
@@ -28,8 +32,8 @@
   max-width: 150px;
 }
 
-.court {
-  background-image: url(./static_assets/court_background.jpg);
+.chain {
+  background-image: url(./static_assets/digital_chain.jpg);
   
   /* Full height */
   height: 100%;
@@ -40,13 +44,13 @@
   background-size: cover;
 }
 
-.over-court {
+.over-chain {
   height: 100%;
   width: 100%;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(19, 35, 58, 0.85); /* Black w/opacity/see-through */
+  background-color: rgba(19, 35, 58, 0.75); /* Black w/opacity/see-through */
   color: #f1faee;
 }
 
@@ -77,23 +81,6 @@
   /* background-position: 75% 75%; */
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.book {
-  background-image: url(./static_assets/book_cover.jpg);
-  
-  background-color: #000;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-
-.preso {
-  background-image: url(./static_assets/tax_cover.jpg);
-  background-color: #181818;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
 }
 
 .footer-header {

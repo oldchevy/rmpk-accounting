@@ -77,7 +77,6 @@ class App extends React.Component {
           <a className="py-2 navbar-brand logo-medium" href="#" aria-label="Home">
             <WhiteMainLogo />
           </a>
-          <h3 className="nav nav-pills py-2 hide-nonmobile">RMPK Accounting</h3>
           <ul className="nav nav-pills hide-mobile">
             {this.state.items.map((item, i) => {
               return (

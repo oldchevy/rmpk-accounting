@@ -12,7 +12,7 @@ class App extends React.Component {
     "About",
     "Services",
     "Consultation"
-  ]
+  ];
 
   itemElementRefs;
 
@@ -31,14 +31,12 @@ class App extends React.Component {
       window.clearInterval(this.timer);
   }
 
-  isInView(element) {
-    const rect = element.getBoundingClientRect();
-    return rect.top >= 0 - this.offset; //and any prev not in view
+  isInView(elRect) {
+    return elRect.top >= 0 - this.offset; //and any prev not in view
   }
 
-  rectTopBottom(element) {
-    const rect = element.getBoundingClientRect();
-    return { top: rect.top, bottom: rect.bottom};
+  rectTopBottom(elRect) {
+    return { top: elRect.top, bottom: elRect.bottom};
   }
 
   spy() {
@@ -47,16 +45,14 @@ class App extends React.Component {
     }
 
     let previousElInView = false;
-    const items = this.ids
-      .map(id => {
-        const element = document.getElementById(id);
-        if (element) {
-
+    const items = this.itemElementRefs.map(elRef => {
+        if (elRef) {
+          const elRect = elRef.getBoundingClientRect();
           const item = {
-            elInView: this.isInView(element),
-            element,
-            rectTop: this.rectTopBottom(element).top,
-            rectBottom: this.rectTopBottom(element).bottom,
+            elInView: this.isInView(elRect),
+            elRef,
+            rectTop: this.rectTopBottom(elRect).top,
+            rectBottom: this.rectTopBottom(elRect).bottom,
           };
 
           item.inView = previousElInView ? false : item.elInView;
@@ -70,7 +66,6 @@ class App extends React.Component {
         }
       });
     this.setState({ items: items});
-    
   }
 
   render() {
@@ -106,7 +101,7 @@ class App extends React.Component {
               <h1 className="display-4 fw-normal hide-mobile">RMPK Accounting</h1>
               <p className="lead fw-normal">
                 RMPK Accounting specializes in serving high-net-worth 
-                clients and small business owners with bookkeeping, tax planning and tax consulting, 
+                clients and small business owners with bookkeeping, tax planning, and tax consulting, 
                 primarily focusing on cryptocurrency and nonfungible token (NFTs) clients. We are here to provide 
                 valuable resources, sound advice and strategies to help you pay the least amount of tax legally 
                 within the confines of the law.
@@ -117,29 +112,6 @@ class App extends React.Component {
         
         <div id="About" className="d-lg-flex flex-md-equal w-100 my-md-3 ps-md-3">
           <div className="mo-margin card splash-height bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white">
-            <div className="my-3 py-3">
-              <h2 className="display-5">Peter Kwon</h2>
-              <p className="lead">CPA</p>
-            </div>
-            <div className="bg-light about-me pk shadow-sm mx-auto card-bkgd"></div>
-          </div>
-          <div className="mo-margin card splash-height bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 overflow-hidden">
-            <div className="my-3 p-3">
-              <p className="lead">
-                Hi, I'm Peter.
-              </p>
-              <p className="">
-                Peter graduated from Virginia Tech in May of 2014 with bachelor’s degrees in Accounting and Finance. 
-                He has 8 years of tax experience at a national public accounting firm in which he has helped to consult 
-                and prepare tax returns for hundreds of clients. In his spare time, Peter enjoys playing golf, investing 
-                in long-term index funds and cryptocurrency, and making Daily Fantasy Sports lineups.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="d-lg-flex flex-md-equal w-100 my-md-3 ps-md-3">
-          <div className="mo-margin card splash-height bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white hide-noskinny">
             <div className="my-3 py-3">
               <h2 className="display-5">Richard Muterspaugh</h2>
               <p className="lead">CPA</p>
@@ -161,12 +133,35 @@ class App extends React.Component {
               </p>
             </div>
           </div>
-          <div className="mo-margin card splash-height bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white hide-skinny">
+        </div>
+
+        <div className="d-lg-flex flex-md-equal w-100 my-md-3 ps-md-3">
+          <div className="mo-margin card splash-height bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white hide-noskinny">
             <div className="my-3 py-3">
-              <h2 className="display-5">Richard Muterspaugh</h2>
+              <h2 className="display-5">Peter Kwon</h2>
               <p className="lead">CPA</p>
             </div>
-            <div className="bg-light about-me rm shadow-sm mx-auto card-bkgd"></div>
+            <div className="bg-light about-me pk shadow-sm mx-auto card-bkgd"></div>
+          </div>
+          <div className="mo-margin card splash-height bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 overflow-hidden">
+            <div className="my-3 p-3">
+              <p className="lead">
+                Hi, I'm Peter.
+              </p>
+              <p className="">
+                Peter graduated from Virginia Tech in May of 2014 with Bachelor’s degrees in Accounting and Finance. 
+                He has 8 years of tax experience at a national public accounting firm in which he has helped to consult 
+                and prepare tax returns for hundreds of clients. In his spare time, Peter enjoys playing golf, investing 
+                in long-term index funds and cryptocurrency, and making Daily Fantasy Sports lineups.
+              </p>
+            </div>
+          </div>
+          <div className="mo-margin card splash-height bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white hide-skinny">
+            <div className="my-3 py-3">
+              <h2 className="display-5">Peter Kwon</h2>
+              <p className="lead">CPA</p>
+            </div>
+            <div className="bg-light about-me pk shadow-sm mx-auto card-bkgd"></div>
           </div>
         </div>
 

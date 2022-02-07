@@ -9,7 +9,13 @@ class App extends React.Component {
 
   timer;
 
-  offset = 0;
+  // The offset accounts for the fact that when an el's top scrolls out 
+  // of view at that point it is well above the fixed header.
+  offset = 170;
+
+  // lastTop stores the previous scroll position so the spy can 
+  // short-ciruit.
+  lastTop = null;
 
   ids = [
     "About",
@@ -22,7 +28,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: []
+      items: [],
+      indexOfInViewSection: -1,
     };
   }
 
@@ -34,8 +41,8 @@ class App extends React.Component {
       window.clearInterval(this.timer);
   }
 
-  isInView(elRect) {
-    return elRect.top >= 0 - this.offset; //and any prev not in view
+  isInFullView(elRect) {
+    return elRect.top <= 0 + this.offset;
   }
 
   rectTopBottom(elRect) {
@@ -43,49 +50,74 @@ class App extends React.Component {
   }
 
   spy() {
+    // Only query the dom once.
     if (!this.itemElementRefs) {
       this.itemElementRefs = this.ids.map(id => document.getElementById(id));
     }
 
-    let previousElInView = false;
-    const items = this.itemElementRefs.map(elRef => {
+    // Short circuit
+    if (window.scrollY === this.lastTop) {
+      return;
+    }
+    this.lastTop = window.scrollY;
+
+    let previousItem = null;
+    const items = this.itemElementRefs.map((elRef, i) => {
         if (elRef) {
           const elRect = elRef.getBoundingClientRect();
           const item = {
-            elInView: this.isInView(elRect),
+            elAboveViewportTop: this.isInFullView(elRect),
+            inView: false,
             elRef,
             rectTop: this.rectTopBottom(elRect).top,
             rectBottom: this.rectTopBottom(elRect).bottom,
           };
 
-          item.inView = previousElInView ? false : item.elInView;
-
-          if (!previousElInView) {
-            previousElInView = item.elInView;
+          if (item.elAboveViewportTop) {
+            if (previousItem) {
+              previousItem.inView = false;
+            }
+            item.inView = true;
           }
+          previousItem = item;
           return item;
         } else {
           return null;
         }
       });
-    this.setState({ items: items});
+    this.setState({ items: items, indexOfInViewSection: this.indexOfInViewSection() });
+    let indexOfVisibileSection = this.indexOfInViewSection();
+    if (indexOfVisibileSection < 0) {
+      window.history.replaceState(null, '', '#');
+    } else {
+      window.history.replaceState(null, '', `#${this.ids[indexOfVisibileSection]}`);
+    }
+    console.log(this.indexOfInViewSection());
+  }
+
+  indexOfInViewSection() {
+    return this.state.items.map(item => item.inView).indexOf(true);
   }
 
   render() {
     return (  
       <React.Fragment> 
-      <header className="footer-header fixed-top py-1">
+      <header 
+        className={this.indexOfInViewSection() > -1 ? "footer-header fixed-top py-1 shown-below-top" : "footer-header fixed-top py-1 clear-at-top"} >
         <nav id="navbar" className="header-footer-container d-flex flex-row justify-content-between bottom-buffer">
-          <a className="py-2 navbar-brand logo-medium" href="#" aria-label="Home">
+          <a
+            className={this.indexOfInViewSection() > -1 ? "py-2 navbar-brand logo-medium show-below-top" : "py-2 navbar-brand logo-medium hide-at-top"} 
+            href="#" aria-label="Home">
             <WhiteMainLogo />
           </a>
+          <div className="filler"></div>
           <ul className="nav nav-pills hide-mobile">
             {this.state.items.map((item, i) => {
               return (
                 <li className="nav-item">
                   <a 
                     className={item.inView ? "nav-link active" : "nav-link"} 
-                    href={"#"+this.ids[i]}>{this.ids[i]}
+                    href={"#"+this.ids[i]}><strong>{this.ids[i]}</strong>
                   </a>
                 </li>
               );
@@ -97,9 +129,10 @@ class App extends React.Component {
   
       <main>
         <div className="chain">
+          {/* this div fills the space of the header and sits behind it */}
           <div className="over-chain position-relative p-3 p-md-5">
-            <div className="col-sm-5 p-lg-5 mx-auto vertical-centered">
-              <h1 className="display-4 fw-normal hide-mobile">RMPK Accounting</h1>
+            <div className="col-sm-5 p-lg-5 mx-auto splash-title">
+              <WhiteMainLogo className="logo-xl"/>
               <p className="fw-normal">
                 RMPK Accounting specializes in serving high-net-worth 
                 clients and small business owners with bookkeeping, tax planning, and tax consulting, 
@@ -112,14 +145,14 @@ class App extends React.Component {
         </div>
         <div className="main-section">
           <div id="About" className="d-lg-flex flex-md-equal w-100 my-md-3 ps-md-3">
-            <div className="mo-margin card splash-height bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white">
+            <div className="mo-margin card custom-radius splash-height bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white">
               <div className="my-3 py-3">
                 <h2 className="display-5">Richard Muterspaugh</h2>
                 <p className="lead">CPA</p>
               </div>
               <div className="bg-light about-me rm shadow-sm mx-auto card-bkgd"></div>
             </div>
-            <div className="mo-margin card splash-height bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 overflow-hidden">
+            <div className="mo-margin card custom-radius splash-height bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 overflow-hidden">
               <div className="my-3 p-3">
                 <p className="lead">
                   Hi, I'm Richard.
@@ -155,14 +188,14 @@ class App extends React.Component {
           </div>
 
           <div className="d-lg-flex flex-md-equal w-100 my-md-3 ps-md-3">
-            <div className="mo-margin card splash-height bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white hide-noskinny">
+            <div className="mo-margin card custom-radius splash-height bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white hide-noskinny">
               <div className="my-3 py-3">
                 <h2 className="display-5">Peter Kwon</h2>
                 <p className="lead">CPA</p>
               </div>
               <div className="bg-light about-me pk shadow-sm mx-auto card-bkgd"></div>
             </div>
-            <div className="mo-margin card splash-height bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 overflow-hidden">
+            <div className="mo-margin card custom-radius splash-height bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 overflow-hidden">
               <div className="my-3 p-3">
                 <p className="lead">
                   Hi, I'm Peter.
@@ -195,7 +228,7 @@ class App extends React.Component {
                 </p>
               </div>
             </div>
-            <div className="mo-margin card splash-height bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white hide-skinny">
+            <div className="mo-margin card custom-radius splash-height bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white hide-skinny">
               <div className="my-3 py-3">
                 <h2 className="display-5">Peter Kwon</h2>
                 <p className="lead">CPA</p>
@@ -204,15 +237,21 @@ class App extends React.Component {
             </div>
           </div>
 
+          <div className="featured-nft-section">
+            <a href="https://opensea.io/assets/0x3f0785095a660fee131eebcd5aa243e529c21786/5198"><div className="art-card yeti"></div></a>
+            <a href="https://opensea.io/assets/0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d/4963"><div className="art-card ape"></div></a>
+            <a href="https://opensea.io/assets/0xba30e5f9bb24caa003e9f2f0497ad287fdf95623/7593"><div className="art-card doge"></div></a>
+          </div>
+
           <div id="Services" className="d-lg-flex flex-md-equal w-100 my-md-3 ps-md-3">
-            <div className="mo-margin card splash-height bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+            <div className="mo-margin card custom-radius splash-height bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
               <div className="my-3 py-3">
                 <h2 className="display-5">Services Offered</h2>
                 {/* <p className="lead">Services I offer.</p> */}
               </div>
               <div className="taxes bg-light shadow-sm mx-auto card-bkgd"></div>
             </div>
-            <div className="mo-margin card splash-height bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5">
+            <div className="mo-margin card custom-radius splash-height bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5">
               <div className="my-3 p-3">
                 <p className="lead">
                   What we do
@@ -235,7 +274,7 @@ class App extends React.Component {
         
     
           <div id="Consultation" className="d-lg-flex flex-md-equal w-100 my-md-3 ps-md-3">
-            <div className="mo-margin calendly-parent card bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5">
+            <div className="mo-margin calendly-parent card custom-radius bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5">
               <h2 className="display-7">Book a consultation today!</h2>
               {/* TODO: make sure this doesn't become a scrollable div on mobile devices */}
               <div class="calendly-inline-widget" data-url="https://calendly.com/d/cf3-n8f-7jx/nft-tax-consult" style={{minWidth:'320px', height: '700px', overflow: 'hidden'}}></div>
@@ -243,7 +282,7 @@ class App extends React.Component {
           </div>
         </div>
       </main>
-      <footer className="footer-header">
+      <footer className="footer">
         <div className="header-footer-container py-3">
           <div className="row">
             <div className="col fit-logo">

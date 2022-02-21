@@ -99,6 +99,22 @@ p.logo-spacing {
   max-width: 150px;
 }
 
+@media (max-width: 450px) {
+  .chain {
+    background-image: linear-gradient(to right, rgba(11, 29, 53, 0.85), rgba(11, 29, 53, 0.5)), url(./static_assets/digital_chain_mobile.jpg);
+  
+    /* Set a specific height */
+    min-height: 800px;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+  }  
+}
+
 .chain {
   background-image: linear-gradient(to right, rgba(11, 29, 53, 0.85), rgba(11, 29, 53, 0.5)), url(./static_assets/digital_chain.jpg);
 

@@ -115,18 +115,20 @@ p.logo-spacing {
   }  
 }
 
-.chain {
-  background-image: linear-gradient(to right, rgba(11, 29, 53, 0.85), rgba(11, 29, 53, 0.5)), url(./static_assets/digital_chain.jpg);
+@media (min-width: 451px) {
+  .chain {
+    background-image: linear-gradient(to right, rgba(11, 29, 53, 0.85), rgba(11, 29, 53, 0.5)), url(./static_assets/digital_chain.jpg);
 
-  /* Set a specific height */
-  min-height: 1000px;
+    /* Set a specific height */
+    min-height: 1000px;
 
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  -webkit-background-size: cover;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+  }
 }
 
 .over-chain {

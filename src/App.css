@@ -19,7 +19,7 @@ body {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 800px) {ƒ
   .card-bkgd {
     width: 40vmin; 
     height: 40vmin; 
@@ -44,6 +44,14 @@ body {
     margin: 100px;
     position: absolute;
     top: 30%;
+  }
+}
+
+@media (max-width: 420px) {
+  .splash-title {
+    margin: 1px;
+    position: absolute;
+    /* top: 30%; */
   }
 }
 

@@ -88,11 +88,18 @@ class App extends React.Component {
     this.setState({ items: items, indexOfInViewSection: this.indexOfInViewSection() });
     let indexOfVisibileSection = this.indexOfInViewSection();
     if (indexOfVisibileSection < 0) {
-      window.history.replaceState(null, '', '#');
+      const currentHash = window.location.hash;
+      const nextHash = '';
+      if (currentHash != nextHash) {
+        window.history.replaceState(null, '', '#');
+      }
     } else {
-      window.history.replaceState(null, '', `#${this.ids[indexOfVisibileSection]}`);
+      const currentHash = window.location.hash;
+      const nextHash = `#${this.ids[indexOfVisibileSection]}`;
+      if (currentHash != nextHash) {
+        window.history.replaceState(null, '', `#${this.ids[indexOfVisibileSection]}`);
+      }
     }
-    console.log(this.indexOfInViewSection());
   }
 
   indexOfInViewSection() {

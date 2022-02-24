@@ -296,7 +296,7 @@ class App extends React.Component {
               <WhiteMainLogo className="logo-footer"/>
             </div>
             <div className="col right-side">
-              <small className="d-block mo-margin text-muted">© RMPK Accounting, 2022</small>
+              <small className="d-block mo-margin text-muted">Copyright © 2022 RMPK ACCOUNTING LLC. All rights reserved. RMPK ACCOUNTING, LLC is a Virginia limited liability company</small>
               {/* <a
                 className="hide-mobile"
                 href="https://twitter.com/dailyfantasycpa?lang=en"

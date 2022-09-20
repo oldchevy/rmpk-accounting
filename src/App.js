@@ -245,16 +245,15 @@ class App extends React.Component {
           </div>
 
           <div className="featured-nft-section">
-            <a href="https://opensea.io/assets/0x3f0785095a660fee131eebcd5aa243e529c21786/5198"><div className="art-card yeti"></div></a>
-            <a href="https://opensea.io/assets/0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d/4963"><div className="art-card ape"></div></a>
-            <a href="https://opensea.io/assets/0xba30e5f9bb24caa003e9f2f0497ad287fdf95623/7593"><div className="art-card doge"></div></a>
+            <a target="_blank" href="https://opensea.io/assets/ethereum/0x3f0785095a660fee131eebcd5aa243e529c21786/5198"><div className="art-card yeti"></div></a>
+            <a target="_blank" href="https://opensea.io/assets/ethereum/0x60e4d786628fea6478f785a6d7e704777c86a7c6/4218"><div className="art-card ape"></div></a>
+            <a target="_blank" href="https://opensea.io/assets/ethereum/0xba30e5f9bb24caa003e9f2f0497ad287fdf95623/1730"><div className="art-card doge"></div></a>
           </div>
 
           <div id="Services" className="d-lg-flex flex-md-equal w-100 my-md-3 ps-md-3">
             <div className="mo-margin card custom-radius splash-height bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
               <div className="my-3 py-3">
                 <h2 className="display-5">Services Offered</h2>
-                {/* <p className="lead">Services I offer.</p> */}
               </div>
               <div className="taxes bg-light shadow-sm mx-auto card-bkgd"></div>
             </div>
@@ -281,7 +280,7 @@ class App extends React.Component {
         
     
           <div id="Consultation" className="d-lg-flex flex-md-equal w-100 my-md-3 ps-md-3">
-            <div className="mo-margin calendly-parent card custom-radius bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5">
+            <div className="mo-margin calendly-parent card custom-radius bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5" style={{height: "100px"}}>
               <h2 className="display-7">Book a consultation today!</h2>
               {/* TODO: make sure this doesn't become a scrollable div on mobile devices */}
               <div class="calendly-inline-widget" data-url="https://calendly.com/d/cf3-n8f-7jx/nft-tax-consult" style={{minWidth:'320px', height: '700px', overflow: 'hidden'}}></div>
@@ -297,27 +296,6 @@ class App extends React.Component {
             </div>
             <div className="col right-side">
               <small className="d-block mo-margin text-muted">Copyright © 2022 RMPK ACCOUNTING LLC. All rights reserved. RMPK ACCOUNTING, LLC is a Virginia limited liability company</small>
-              {/* <a
-                className="hide-mobile"
-                href="https://twitter.com/dailyfantasycpa?lang=en"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" className="bi bi-twitter" viewBox="0 0 24 24">
-                  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
-                </svg>
-                @DailyFantasyCPA
-              </a>
-              <a
-                className="hide-nonmobile"
-                href="https://twitter.com/dailyfantasycpa?lang=en"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-twitter" viewBox="0 0 24 24">
-                  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
-                </svg>
-              </a> */}
             </div>
           </div>
         </div>

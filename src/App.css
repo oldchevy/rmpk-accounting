@@ -172,6 +172,12 @@ p.logo-spacing {
 
 .about-me.rm {
   background-image: url(./static_assets/rm_headshot.jpg);
+  background-position: 35% 75%;
+}
+
+.about-me.mc {
+  background-image: url(./static_assets/mc_headshot.jpg);
+  background-position: top left 15px;
 }
 
 .taxes {

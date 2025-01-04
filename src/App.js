@@ -176,8 +176,8 @@ class App extends React.Component {
                   Get In Touch
                 </p>
                 <p className="logo-spacing">
-                  <a className="socials-links" href="mailto:rmutercpa@gmail.com" aria-label="Home">
-                    <EmailLogo className="social-icons" /> rmutercpa@gmail.com
+                  <a className="socials-links" href="mailto:rmuterspaugh@rmpkaccounting.com" aria-label="Home">
+                    <EmailLogo className="social-icons" /> rmuterspaugh@rmpkaccounting.com
                   </a>
                 </p>
                 <p className="logo-spacing">
@@ -219,8 +219,8 @@ class App extends React.Component {
                   Get In Touch
                 </p>
                 <p className="logo-spacing">
-                  <a className="socials-links" href="mailto:peterkwoncpa@gmail.com" aria-label="Home">
-                    <EmailLogo className="social-icons" /> peterkwoncpa@gmail.com
+                  <a className="socials-links" href="mailto:pkwon@rmpkaccounting.com" aria-label="Home">
+                    <EmailLogo className="social-icons" /> pkwon@rmpkaccounting.com
                   </a>
                 </p>
                 <p className="logo-spacing">
@@ -244,10 +244,46 @@ class App extends React.Component {
             </div>
           </div>
 
-          <div className="featured-nft-section">
-            <a target="_blank" href="https://opensea.io/assets/ethereum/0x3f0785095a660fee131eebcd5aa243e529c21786/5198"><div className="art-card yeti"></div></a>
-            <a target="_blank" href="https://opensea.io/assets/ethereum/0x60e4d786628fea6478f785a6d7e704777c86a7c6/4218"><div className="art-card ape"></div></a>
-            <a target="_blank" href="https://opensea.io/assets/ethereum/0xba30e5f9bb24caa003e9f2f0497ad287fdf95623/1730"><div className="art-card doge"></div></a>
+          <div className="d-lg-flex flex-md-equal w-100 my-md-3 ps-md-3">
+            <div className="mo-margin card custom-radius splash-height bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white">
+              <div className="my-3 py-3">
+                <h2 className="display-5">Matt Cribbs</h2>
+                <p className="lead">CPA</p>
+              </div>
+              <div className="bg-light about-me mc shadow-sm mx-auto card-bkgd"></div>
+            </div>
+            <div className="mo-margin card custom-radius splash-height bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 overflow-hidden">
+              <div className="my-3 p-3">
+                <p className="lead">
+                  Hi, I'm Matt.
+                </p>
+                <p className="">
+                Matt graduated from Albright College in 2007 with degrees in Business Administration and
+                History. He was also Captain of the swim team and later went on to be a Graduate Assistant
+                Coach. Matt has over fifteen years of accounting experience and spend the last twelve years of
+                his career in public accounting. He has concentrated on the preparation of income tax returns
+                for individuals, corporations, partnerships, estates and trusts while also focusing on tax
+                planning efforts and resolution of IRS and state tax notices. Matt is a lifelong Marylander and
+                currently lives in Annapolis with his wife and two boys. In his free time, he loves to watch his
+                kids’ sporting events as well as cheer on the Orioles and Commanders. In addition to sports,
+                Matt enjoys spending time outdoors at the beach, kayaking, camping, and having fun with
+                family.
+                </p>
+                <p className="lead second-p">
+                  Get In Touch
+                </p>
+                <p className="logo-spacing">
+                  <a className="socials-links" href="mailto:mcribbs@rmpkaccounting.com" aria-label="Home">
+                    <EmailLogo className="social-icons" /> mcribbs@rmpkaccounting.com
+                  </a>
+                </p>
+                <p className="logo-spacing">
+                  <a className="socials-links" href="https://www.linkedin.com/in/matthew-cribbs-cpa-b59b6263/" aria-label="Home">
+                    <LinkedInLogo className="social-icons" /> Matthew Cribbs
+                  </a>
+                </p>
+              </div>
+            </div>
           </div>
 
           <div id="Services" className="d-lg-flex flex-md-equal w-100 my-md-3 ps-md-3">

@@ -13,10 +13,13 @@
     "popper.js": "^1.16.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-scripts": "^5.0.1",
+    "react-scripts": "5.0.1",
     "sass": "^1.32.5",
     "typescript": "^5.7.2",
     "web-vitals": "^0.2.4"
+  },
+  "overrides": {
+    "typescript": "^5.7.2"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -114,7 +114,7 @@ class App extends React.Component {
         <nav id="navbar" className="header-footer-container d-flex flex-row justify-content-between bottom-buffer">
           <a
             className={this.indexOfInViewSection() > -1 ? "py-2 navbar-brand logo-medium show-below-top" : "py-2 navbar-brand logo-medium hide-at-top"} 
-            href="#" aria-label="Home">
+            href="#top" aria-label="Home">
             <WhiteMainLogo />
           </a>
           <div className="filler"></div>

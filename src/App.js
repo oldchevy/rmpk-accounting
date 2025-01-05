@@ -90,13 +90,13 @@ class App extends React.Component {
     if (indexOfVisibileSection < 0) {
       const currentHash = window.location.hash;
       const nextHash = '';
-      if (currentHash != nextHash) {
+      if (currentHash !== nextHash) {
         window.history.replaceState(null, '', '#');
       }
     } else {
       const currentHash = window.location.hash;
       const nextHash = `#${this.ids[indexOfVisibileSection]}`;
-      if (currentHash != nextHash) {
+      if (currentHash !== nextHash) {
         window.history.replaceState(null, '', `#${this.ids[indexOfVisibileSection]}`);
       }
     }
